@@ -1,11 +1,10 @@
-provider "aws" {
-  region = var.region
+resource "aws_vpc" "jenkins_vpc" {
 
-  default_tags {
-    tags = {
-      Project     = var.project_name
-      Environment = "Dev"
-      ManagedBy   = "Terraform"
-    }
+  cidr_block = var.vpc_cidr
+  tags = {
+
+    Name = "${var.project_name}-VPC"
+
   }
+
 }
