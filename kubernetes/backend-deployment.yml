@@ -1,38 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
-
 metadata:
-  name: todo-backend
-  labels:
-    app: todo-backend
+  name: backend
 
 spec:
-  replicas: 1
+  replicas: 2
 
   selector:
     matchLabels:
-      app: todo-backend
+      app: backend
 
   template:
     metadata:
       labels:
-        app: todo-backend
+        app: backend
 
     spec:
       containers:
-      - name: todo-backend
+      - name: backend
 
-        image: 276719381991.dkr.ecr.ap-south-1.amazonaws.com/backend/dev
+        image: 2276719381991.dkr.ecr.ap-south-1.amazonaws.com/dev/my-backend
+
         imagePullPolicy: Always
 
         ports:
         - containerPort: 3500
 
-        resources:
-          requests:
-            cpu: "100m"
-            memory: "128Mi"
-
-          limits:
-            cpu: "250m"
-            memory: "256Mi"
+        env:
+        - name: MONGO_CONN_STR
+          value: mongodb://mongodb:27017/todo
