@@ -19,7 +19,7 @@ spec:
       containers:
       - name: backend
 
-        image: 2276719381991.dkr.ecr.ap-south-1.amazonaws.com/dev/my-backend:v1
+        image: 276719381991.dkr.ecr.ap-south-1.amazonaws.com/dev/my-backend:v1
 
         imagePullPolicy: Always
 
