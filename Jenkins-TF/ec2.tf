@@ -1,8 +1,8 @@
 resource "aws_instance" "jenkins" {
 
-  ami                    = var.ami_id
-  instance_type          = var.instance_type
-  key_name               = var.key_name
+  ami           = var.ami_id
+  instance_type = var.instance_type
+  key_name      = var.key_name
 
   subnet_id = aws_subnet.public_subnet.id
 
